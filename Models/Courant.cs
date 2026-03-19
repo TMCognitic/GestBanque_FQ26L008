@@ -2,6 +2,12 @@
 
 public class Courant
 {
+    //double = double + courant
+    public static double operator +(double value, Courant compte)
+    {
+        return (value < 0 ? 0 : value) + (compte.Solde < 0 ? 0 : compte.Solde);
+    }
+
     public string Numero { get; set; }
     public double Solde { get; private set; }
     public double LigneDeCredit
