@@ -31,7 +31,7 @@ Epargne epargne = new Epargne()
 };
 
 banque.Ajouter(courant);
-//banque.Ajouter(epargne);
+banque.Ajouter(epargne);
 
 banque["00001"].Depot(-20);
 Console.WriteLine($"Solde après un dépot de -20 : {banque["00001"].Solde}");
@@ -51,9 +51,7 @@ Console.WriteLine($"Solde après un retrait de 200 : {banque["00001"].Solde}");
 banque["00001"].Retrait(100);
 Console.WriteLine($"Solde après un retrait de 100 : {banque["00001"].Solde}");
 
-//banque["00002"].Depot(2000);
-epargne.Depot(2000);
-Console.WriteLine($"Solde après un dépot de 2000 : {epargne.Solde}");
-//Console.WriteLine($"Solde après un dépot de 2000 : {banque["00002"].Solde}");
+banque["00002"].Depot(2000);
+Console.WriteLine($"Solde après un dépot de 2000 : {banque["00002"].Solde}");
 
 Console.WriteLine($"Avoir des comptes de {john.Prenom} {john.Nom} : {banque.AvoirDesComptes(john)}");
