@@ -18,4 +18,9 @@ public class Courant : Compte
     {
         Retrait(montant, LigneDeCredit);
     }
+
+    protected override double CalculInteret()
+    {
+        return Solde * (Solde > 0 ? 0.03 : 0.0975);
+    }
 }

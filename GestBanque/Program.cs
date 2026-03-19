@@ -54,4 +54,7 @@ Console.WriteLine($"Solde après un retrait de 100 : {banque["00001"].Solde}");
 banque["00002"].Depot(2000);
 Console.WriteLine($"Solde après un dépot de 2000 : {banque["00002"].Solde}");
 
+banque["00001"].AppliquerInteret();
+banque["00002"].AppliquerInteret();
+
 Console.WriteLine($"Avoir des comptes de {john.Prenom} {john.Nom} : {banque.AvoirDesComptes(john)}");
