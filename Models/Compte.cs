@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    public abstract class Compte
+    public abstract class Compte : ICustomer, IBanker
     {
         public static double operator +(double value, Compte compte)
         {
@@ -29,7 +29,7 @@
 
         protected void Retrait(double montant, double ligneDeCredit)
         {
-            if(ligneDeCredit < 0)
+            if (ligneDeCredit < 0)
             {
                 Console.WriteLine("Ligne de crédit invalide");
                 return; //Erreur!!!
