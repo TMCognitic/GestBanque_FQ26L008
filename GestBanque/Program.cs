@@ -8,27 +8,12 @@ celsius = (Celsius)fahrenheit;
 
 
 
-Banque banque = new Banque() { Nom = "Techno Banking" };
+Banque banque = new Banque("Techno Banking");
 
-Personne john = new Personne()
-{
-    Nom = "Doe",
-    Prenom = "John",
-    DateNaiss = new DateTime(1970, 1, 1)
-};
+Personne john = new Personne("Doe", "John", new DateTime(1970, 1, 1));
 
-Courant courant = new Courant()
-{
-    Numero = "00001",
-    LigneDeCredit = 100,
-    Titulaire = john
-};
-
-Epargne epargne = new Epargne()
-{
-    Numero = "00002",
-    Titulaire = john
-};
+Courant courant = new Courant("00001", 100, john);
+Epargne epargne = new Epargne("00002", john);
 
 banque.Ajouter(courant);
 banque.Ajouter(epargne);
