@@ -2,11 +2,12 @@
 {
     public class Banque
     {
-        private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();
+        private Dictionary<string, Compte> _comptes;
         public string Nom { get; }
 
         public Banque(string nom)
         {
+            _comptes = new Dictionary<string, Compte>();
             Nom = nom;
         }
 
