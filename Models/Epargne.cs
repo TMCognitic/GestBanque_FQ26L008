@@ -15,6 +15,15 @@ public class Epargne : Compte
         }
     }
 
+    public Epargne(string numero, Personne titulaire) : base(numero, titulaire)
+    {
+    }
+
+    public Epargne(string numero, Personne titulaire, double solde, DateTime dernierRetrait) : base(numero, titulaire, solde)
+    {
+        DernierRetrait = dernierRetrait;
+    }
+
     protected override double CalculInteret()
     {
         return Solde * 0.045;

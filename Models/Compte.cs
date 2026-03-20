@@ -7,9 +7,20 @@
             return (value < 0 ? 0 : value) + (compte.Solde < 0 ? 0 : compte.Solde);
         }
 
-        public string Numero { get; set; }
+        public string Numero { get; private set; }
         public double Solde { get; private set; }
-        public Personne Titulaire { get; set; }
+        public Personne Titulaire { get; private set; }
+
+        protected Compte(string numero, Personne titulaire)
+        {
+            Numero = numero;
+            Titulaire = titulaire;
+        }
+
+        protected Compte(string numero, Personne titulaire, double solde) : this(numero, titulaire)
+        {
+            Solde = solde;
+        }
 
         public void Depot(double montant)
         {

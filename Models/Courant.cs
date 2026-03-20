@@ -14,6 +14,20 @@ public class Courant : Compte
         }
     }
 
+    public Courant(string numero, Personne titulaire) : base(numero, titulaire)
+    {
+    }
+
+    public Courant(string numero, Personne titulaire, double solde) : base(numero, titulaire, solde)
+    {
+        
+    }
+
+    public Courant(string numero, double ligneDeCredit, Personne titulaire) : base(numero, titulaire)
+    {
+        LigneDeCredit = ligneDeCredit;
+    }
+
     public override void Retrait(double montant)
     {
         Retrait(montant, LigneDeCredit);
