@@ -8,7 +8,7 @@ public class Courant : Compte
         set 
         {
             if (value < 0)
-                return; //Erreur!!!
+                throw new InvalidOperationException($"Courant.LigneDeCredit: La valeur doit être supérieure ou égale à 0.");
 
             field = value; 
         }
