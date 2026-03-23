@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using Models.Exceptions;
+
+namespace Models
 {
     public abstract class Compte : ICustomer, IBanker
     {
@@ -27,7 +29,7 @@
             if (montant <= 0)
             {
                 Console.WriteLine("Montant invalide");
-                return; //Erreur!!!
+                throw new ArgumentOutOfRangeException(nameof(montant), $"Compte.Depot(): Le montant doit être positif !");
             }
 
             Solde += montant;
@@ -43,19 +45,19 @@
             if (ligneDeCredit < 0)
             {
                 Console.WriteLine("Ligne de crédit invalide");
-                return; //Erreur!!!
+                throw new InvalidOperationException($"Compte.Retrait(): La ligne de crédit doit être supérieure ou égale à 0.");
             }
 
             if (montant <= 0)
             {
                 Console.WriteLine("Montant invalide");
-                return; //Erreur!!!
+                throw new ArgumentOutOfRangeException(nameof(montant), $"Compte.Retrait(): Le montant doit être positif !");
             }
 
             if (Solde - montant < -ligneDeCredit)
             {
                 Console.WriteLine("Solde insuffisant");
-                return; //Erreur!!!
+                throw new SoldeInsuffisantException(nameof(montant), $"Compte.Retrait(): Le solde est insuffisant !");
             }
 
             Solde -= montant;
